@@ -58,4 +58,4 @@ License
 
 Copyright &copy; 2018, Martin Roddam
 
-[node]: https://golang.org/
+[golang]: https://golang.org/
