@@ -27,7 +27,7 @@ func main() {
 		fake, _ := faker.New("en")
 		fmt.Printf("Record %v\n==========================================\n", i+1)
 
-		printItem("Name", strings.ToUpper(fake.NamePrefix()+" "+fake.FirstName()+" "+fake.LastName()))
+		printItem("Name", formatName(fake.NamePrefix(), fake.FirstName(), fake.LastName()))
 		printItem("Address", fake.StreetAddress())
 		printItem("City", fake.City())
 		printItem("State/County", fake.State())
@@ -68,4 +68,8 @@ func evaluateCountry(country string) {
 
 func printItem(label string, data string) {
 	fmt.Println(pad.Right(label+":", 15, " ") + data)
+}
+
+func formatName(prefix, first, last string) string {
+	return strings.ToUpper(strings.TrimSpace(prefix) + " " + strings.TrimSpace(first) + " " + strings.TrimSpace(last))
 }
